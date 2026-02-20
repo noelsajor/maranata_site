@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Culto de Adoración Dominical",
+    "date": "2026-02-22",
+    "time": "10:00",
+    "location": "Salón Principal",
+    "category": "culto",
+    "description": "Encuentro semanal de adoración, palabra y comunión. Todos son bienvenidos. Habrá transmisión en vivo para quienes no puedan asistir presencialmente."
+  },
+  {
+    "id": 2,
+    "title": "Círculo de Oración",
+    "date": "2026-02-24",
+    "time": "19:00",
+    "location": "Sala de Reuniones B",
+    "category": "oracion",
+    "description": "Espacio íntimo de intercesión colectiva. Traemos nuestras peticiones y oramos juntos por la comunidad, las familias y las necesidades individuales."
+  },
+  {
+    "id": 3,
+    "title": "Clase de Academia: Formación Bíblica",
+    "date": "2026-02-25",
+    "time": "18:30",
+    "location": "Aula 1",
+    "category": "academia",
+    "description": "Estudio profundo de las Escrituras. Esta semana: contexto histórico y hermenéutica básica. Cuaderno y Biblia requeridos."
+  },
+  {
+    "id": 4,
+    "title": "Taller de Liderazgo Juvenil",
+    "date": "2026-02-26",
+    "time": "17:00",
+    "location": "Sala Polivalente",
+    "category": "taller",
+    "description": "Formación práctica para jóvenes que desean desarrollar habilidades de liderazgo desde una perspectiva de servicio y fe."
+  },
+  {
+    "id": 5,
+    "title": "Culto de Adoración Dominical",
+    "date": "2026-03-01",
+    "time": "10:00",
+    "location": "Salón Principal",
+    "category": "culto",
+    "description": "Encuentro semanal de adoración, palabra y comunión. Primer domingo del mes: Santa Cena."
+  },
+  {
+    "id": 6,
+    "title": "Jornada de Servicio Comunitario",
+    "date": "2026-03-03",
+    "time": "09:00",
+    "location": "Punto de encuentro: Entrada Principal",
+    "category": "servicio",
+    "description": "Salimos juntos a servir a nuestra comunidad local. Actividades de limpieza, apoyo alimentario y visita a adultos mayores. Llevar ropa cómoda."
+  },
+  {
+    "id": 7,
+    "title": "Retiro de Mujeres",
+    "date": "2026-03-06",
+    "time": "08:00",
+    "location": "POR DEFINIR",
+    "category": "retiro",
+    "description": "Día de descanso, reflexión y hermandad para las mujeres de la congregación. Cupos limitados — inscripción requerida."
+  },
+  {
+    "id": 8,
+    "title": "Clase de Academia: Teología Práctica",
+    "date": "2026-03-10",
+    "time": "18:30",
+    "location": "Aula 2",
+    "category": "academia",
+    "description": "Cómo integrar la fe en la vida diaria: trabajo, familia y relaciones. Módulo 3 de 6."
+  },
+  {
+    "id": 9,
+    "title": "Noche de Alabanza",
+    "date": "2026-03-14",
+    "time": "19:30",
+    "location": "Salón Principal",
+    "category": "culto",
+    "description": "Encuentro especial de adoración libre, música y testimonios. Abierto a toda la comunidad y sus invitados."
+  },
+  {
+    "id": 10,
+    "title": "Reunión de Padres — Academia Maranata",
+    "date": "2026-03-18",
+    "time": "19:00",
+    "location": "Aula Magna",
+    "category": "academia",
+    "description": "Presentación del avance académico del mes, calendario de actividades y espacio de preguntas con los docentes y coordinadores."
+  }
+]
