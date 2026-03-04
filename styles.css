@@ -69,7 +69,7 @@
   --transition: 200ms ease;
   --transition-slow: 500ms ease;
 
-  --max-w: 1120px;
+  --max-w: 1200px;
   --section-py: clamp(64px, 10vw, 120px);
 }
 
@@ -255,6 +255,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: .75rem;
+  flex: 0 0 auto;
 }
 
 .logo-img {
@@ -279,18 +280,21 @@ h3 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.8rem;
   list-style: none;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
-  font-size: .85rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: .06em;
   color: rgba(245, 241, 235, .75);
   transition: color var(--transition);
   position: relative;
   padding-bottom: 2px;
+  white-space: nowrap;
+  text-transform: none;
 }
 
 .nav-links a::after {
@@ -384,7 +388,7 @@ h3 {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
   .nav-links {
     display: none;
   }
