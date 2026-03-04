@@ -16,11 +16,11 @@
    1. NAV
 ══════════════════════════════════════════════════ */
 const Nav = (() => {
-  const header   = document.getElementById('header');
-  const burger   = document.querySelector('.nav-burger');
+  const header = document.getElementById('header');
+  const burger = document.querySelector('.nav-burger');
   const mobileNav = document.getElementById('nav-mobile');
-  const allLinks  = document.querySelectorAll('.nav-links a, .nav-mobile a');
-  const sections  = document.querySelectorAll('section[id]');
+  const allLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
+  const sections = document.querySelectorAll('section[id]');
 
   /* Sticky shadow */
   function onScroll() {
@@ -75,28 +75,28 @@ const Nav = (() => {
    2. CARTELERA
 ══════════════════════════════════════════════════ */
 const Cartelera = (() => {
-  const grid   = document.getElementById('cartelera-grid');
+  const grid = document.getElementById('cartelera-grid');
   const filters = document.querySelectorAll('.filter-btn');
   let allActividades = [];
   let activeFilter = 'all';
 
   /* Category labels */
   const catLabels = {
-    culto:    'Culto',
-    oracion:  'Oración',
+    culto: 'Culto',
+    oracion: 'Oración',
     academia: 'Academia',
-    taller:   'Taller',
+    taller: 'Taller',
     servicio: 'Servicio',
-    retiro:   'Retiro',
+    retiro: 'Retiro',
   };
 
   /* Format date */
   function formatDate(dateStr) {
     const d = new Date(dateStr + 'T00:00:00');
     return {
-      day:   d.getDate(),
+      day: d.getDate(),
       month: d.toLocaleDateString('es-ES', { month: 'short' }).replace('.', ''),
-      full:  d.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }),
+      full: d.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }),
     };
   }
 
@@ -177,7 +177,7 @@ const Cartelera = (() => {
   /* Load JSON */
   async function load() {
     try {
-      const res = await fetch('data/actividades.json');
+      const res = await fetch('actividades.json');
       if (!res.ok) throw new Error('HTTP ' + res.status);
       allActividades = await res.json();
       /* Sort by date */
@@ -215,16 +215,16 @@ const Cartelera = (() => {
    3. TOAST
 ══════════════════════════════════════════════════ */
 const Toast = (() => {
-  const el    = document.getElementById('toast');
-  const icon  = document.getElementById('toast-icon');
+  const el = document.getElementById('toast');
+  const icon = document.getElementById('toast-icon');
   const title = document.getElementById('toast-title');
-  const msg   = document.getElementById('toast-msg');
+  const msg = document.getElementById('toast-msg');
   const close = document.getElementById('toast-close');
   let timer;
 
   const icons = {
     success: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`,
-    error:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
+    error: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
   };
 
   function show(type, titleText, msgText, duration = 5000) {
@@ -233,7 +233,7 @@ const Toast = (() => {
     el.setAttribute('aria-hidden', 'false');
     icon.innerHTML = icons[type] ?? '';
     title.textContent = titleText;
-    msg.textContent   = msgText;
+    msg.textContent = msgText;
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => el.classList.add('show'));
@@ -264,13 +264,13 @@ const ContactForm = (() => {
 
   /* Configurable CSV columns */
   const CSV_COLUMNS = [
-    { key: 'id',          label: 'ID' },
-    { key: 'createdAt',   label: 'Fecha/Hora' },
-    { key: 'type',        label: 'Tipo' },
-    { key: 'name',        label: 'Nombre' },
-    { key: 'email',       label: 'Email' },
-    { key: 'message',     label: 'Mensaje' },
-    { key: 'source',      label: 'Fuente' },
+    { key: 'id', label: 'ID' },
+    { key: 'createdAt', label: 'Fecha/Hora' },
+    { key: 'type', label: 'Tipo' },
+    { key: 'name', label: 'Nombre' },
+    { key: 'email', label: 'Email' },
+    { key: 'message', label: 'Mensaje' },
+    { key: 'source', label: 'Fuente' },
   ];
 
   /* Rate limit: 1 envío cada 30 segundos */
@@ -281,12 +281,12 @@ const ContactForm = (() => {
   const ADMIN_EMAIL = 'admin@maranata.org';
 
   /* ── DOM ── */
-  const form       = document.getElementById('contact-form');
-  const btnSubmit  = document.getElementById('btn-submit');
-  const btnMailto  = document.getElementById('btn-mailto');
+  const form = document.getElementById('contact-form');
+  const btnSubmit = document.getElementById('btn-submit');
+  const btnMailto = document.getElementById('btn-mailto');
   const btnDownload = document.getElementById('btn-download');
-  const subsList   = document.getElementById('submissions-list');
-  const statusEl   = document.getElementById('submit-status');
+  const subsList = document.getElementById('submissions-list');
+  const statusEl = document.getElementById('submit-status');
 
   /* ── Helpers ── */
   function getSubmissions() {
@@ -334,9 +334,9 @@ const ContactForm = (() => {
 
   /* ── Validation ── */
   function validateField(id, errId, condition, msg) {
-    const el  = document.getElementById(id);
+    const el = document.getElementById(id);
     const err = document.getElementById(errId);
-    const ok  = condition(el.value.trim());
+    const ok = condition(el.value.trim());
     el.classList.toggle('error', !ok);
     err.classList.toggle('visible', !ok);
     if (!ok) err.textContent = msg;
@@ -365,13 +365,13 @@ const ContactForm = (() => {
   /* ── Build submission object ── */
   function buildSubmission() {
     return {
-      id:        genId(),
+      id: genId(),
       createdAt: new Date().toISOString(),
-      type:      document.getElementById('msg-type').value,
-      name:      document.getElementById('msg-name').value.trim(),
-      email:     document.getElementById('msg-email').value.trim() || null,
-      message:   document.getElementById('msg-text').value.trim(),
-      source:    'landing-v1',
+      type: document.getElementById('msg-type').value,
+      name: document.getElementById('msg-name').value.trim(),
+      email: document.getElementById('msg-email').value.trim() || null,
+      message: document.getElementById('msg-text').value.trim(),
+      source: 'landing-v1',
     };
   }
 
@@ -381,16 +381,16 @@ const ContactForm = (() => {
     if (!subs.length) return;
 
     const header = CSV_COLUMNS.map(c => escapeCSV(c.label)).join(',');
-    const rows   = subs.map(s =>
+    const rows = subs.map(s =>
       CSV_COLUMNS.map(c => escapeCSV(s[c.key])).join(',')
     );
     const csv = [header, ...rows].join('\r\n');
 
     const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href     = url;
-    a.download = `maranata-envios-${new Date().toISOString().slice(0,10)}.csv`;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `maranata-envios-${new Date().toISOString().slice(0, 10)}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -401,9 +401,9 @@ const ContactForm = (() => {
 
   /* ── Mailto builder ── */
   function buildMailto() {
-    const type    = document.getElementById('msg-type').value;
-    const name    = document.getElementById('msg-name').value.trim();
-    const email   = document.getElementById('msg-email').value.trim();
+    const type = document.getElementById('msg-type').value;
+    const name = document.getElementById('msg-name').value.trim();
+    const email = document.getElementById('msg-email').value.trim();
     const message = document.getElementById('msg-text').value.trim();
 
     const subject = encodeURIComponent(
@@ -483,8 +483,8 @@ const ContactForm = (() => {
   /* ── Mailto handler ── */
   function handleMailto() {
     /* Validate lightly first */
-    const type    = document.getElementById('msg-type').value;
-    const name    = document.getElementById('msg-name').value.trim();
+    const type = document.getElementById('msg-type').value;
+    const name = document.getElementById('msg-name').value.trim();
     const message = document.getElementById('msg-text').value.trim();
 
     if (!type || !name || !message) {
@@ -544,12 +544,83 @@ const Reveal = (() => {
 })();
 
 /* ══════════════════════════════════════════════════
-   BOOT
+   6. CAROUSEL (Quienes somos)
+   Simple auto-playing carousel with nav controls
 ══════════════════════════════════════════════════ */
+const QuienesCarousel = (() => {
+  const carousel = document.querySelector('.quienes-carousel');
+  if (!carousel) return { init: () => { } };
+
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  const prevBtn = carousel.querySelector('.carousel-btn.prev');
+  const nextBtn = carousel.querySelector('.carousel-btn.next');
+
+  let currentIndex = 0;
+  let interval;
+  const DURATION = 5000;
+
+  function showSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    dots[currentIndex].classList.remove('active');
+    dots[currentIndex].setAttribute('aria-pressed', 'false');
+
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides[currentIndex].classList.add('active');
+    dots[currentIndex].classList.add('active');
+    dots[currentIndex].setAttribute('aria-pressed', 'true');
+  }
+
+  function next() { showSlide(currentIndex + 1); }
+  function prev() { showSlide(currentIndex - 1); }
+
+  function start() {
+    stop();
+    interval = setInterval(next, DURATION);
+  }
+
+  function stop() {
+    if (interval) clearInterval(interval);
+  }
+
+  function init() {
+    if (!carousel) return;
+
+    nextBtn?.addEventListener('click', () => {
+      next();
+      start(); // reset timer
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      prev();
+      start(); // reset timer
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showSlide(i);
+        start(); // reset timer
+      });
+    });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+
+    start();
+  }
+
+  return { init };
+})();
+
+/* ══════════════════════════════════════════════════
+   BOOT
+   ══════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   Nav.init();
   Toast.init();
   Cartelera.init();
   ContactForm.init();
   Reveal.init();
+  QuienesCarousel.init();
 });
