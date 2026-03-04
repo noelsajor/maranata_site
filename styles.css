@@ -424,7 +424,7 @@ h3 {
 
   background-image:
     linear-gradient(rgba(26, 31, 46, 0.7), rgba(26, 31, 46, 0.7)),
-    url('/vercel/maranata_site/images/pexels-caleboquendo-18100820.jpg');
+    url('images/pexels-caleboquendo-18100820.jpg');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
