@@ -4,7 +4,40 @@
    Paleta: Marfil cálido + Azul noche + Dorado antiguo
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham Font/GothamHTF-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham Font/GothamHTF-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham Font/GothamHTF-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham Font/GothamHTF-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham Font/GothamHTF-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
 
 /* ─── CSS Variables ─── */
 :root {
@@ -22,8 +55,8 @@
   --error: #C0392B;
   --success: #2E7D52;
 
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Jost', 'Segoe UI', sans-serif;
+  --font-display: 'Gotham', sans-serif;
+  --font-body: 'Gotham', sans-serif;
 
   --radius-sm: 4px;
   --radius: 8px;
@@ -225,7 +258,7 @@ h3 {
 }
 
 .logo-img {
-  height: 42px;
+  height: 28px;
   /* Adjusted for the header height */
   width: auto;
   display: block;
@@ -388,7 +421,7 @@ h3 {
 
   background-image:
     linear-gradient(rgba(26, 31, 46, 0.7), rgba(26, 31, 46, 0.7)),
-    url('/images/pexels-caleboquendo-18100820.jpg');
+    url('/vercel/maranata_site/images/pexels-caleboquendo-18100820.jpg');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -1250,6 +1283,7 @@ h3 {
   padding: .8rem 1rem;
   transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-input::placeholder,
@@ -1572,16 +1606,25 @@ footer {
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
 }
 
 .footer-brand {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--ivory);
-  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 72px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity var(--transition);
+}
+
+.footer-logo:hover {
+  opacity: 1;
 }
 
 .footer-copy {
