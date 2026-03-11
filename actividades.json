@@ -1,30 +1,12 @@
 [
   {
-    "id": 1,
-    "title": "Culto de Adoración Dominical",
-    "date": "2026-02-22",
-    "time": "10:00",
-    "location": "Salón Principal",
-    "category": "culto",
-    "description": "Encuentro semanal de adoración, palabra y comunión. Todos son bienvenidos. Habrá transmisión en vivo para quienes no puedan asistir presencialmente."
-  },
-  {
     "id": 2,
-    "title": "Círculo de Oración",
-    "date": "2026-02-24",
-    "time": "19:00",
-    "location": "Sala de Reuniones B",
+    "title": "Reuniones de Oración — Fracrimar",
+    "date": "2026-03-10",
+    "time": "Varios horarios",
+    "location": "Salón de Intercesión",
     "category": "oracion",
-    "description": "Espacio íntimo de intercesión colectiva. Traemos nuestras peticiones y oramos juntos por la comunidad, las familias y las necesidades individuales."
-  },
-  {
-    "id": 3,
-    "title": "Clase de Academia: Formación Bíblica",
-    "date": "2026-02-25",
-    "time": "18:30",
-    "location": "Aula 1",
-    "category": "academia",
-    "description": "Estudio profundo de las Escrituras. Esta semana: contexto histórico y hermenéutica básica. Cuaderno y Biblia requeridos."
+    "description": "Lunes: 9 AM, 5 PM y 7 PM. Martes: 7 AM. Mié a Vie: 9 AM. Sáb: 8 AM. Dom: 7:30 AM. El Ministerio de Intercesión Fracrimar te invita a buscar juntos la presencia de Dios."
   },
   {
     "id": 4,
@@ -64,29 +46,29 @@
   },
   {
     "id": 8,
-    "title": "Clase de Academia: Teología Práctica",
+    "title": "Academia de Teología Fracrimar",
     "date": "2026-03-10",
     "time": "18:30",
-    "location": "Aula 2",
-    "category": "academia",
-    "description": "Cómo integrar la fe en la vida diaria: trabajo, familia y relaciones. Módulo 3 de 6."
-  },
-  {
-    "id": 9,
-    "title": "Noche de Alabanza",
-    "date": "2026-03-14",
-    "time": "19:30",
-    "location": "Salón Principal",
-    "category": "culto",
-    "description": "Encuentro especial de adoración libre, música y testimonios. Abierto a toda la comunidad y sus invitados."
-  },
-  {
-    "id": 10,
-    "title": "Reunión de Padres — Academia Maranata",
-    "date": "2026-03-18",
-    "time": "19:00",
     "location": "Aula Magna",
     "category": "academia",
-    "description": "Presentación del avance académico del mes, calendario de actividades y espacio de preguntas con los docentes y coordinadores."
+    "description": "Formación bíblica y ministerial en sus tres niveles: Básico, Intermedio y Avanzado. Un espacio para profundizar en el conocimiento de la Palabra y equiparte para el servicio."
+  },
+  {
+    "id": 11,
+    "title": "Academia Kids Fracrimar",
+    "date": "2026-03-12",
+    "time": "17:00",
+    "location": "Salón Juvenil",
+    "category": "academia",
+    "description": "Formación dinámica para niños y niñas de 11 a 15 años. ¡Inscripciones abiertas para el nuevo ciclo!"
+  },
+  {
+    "id": 12,
+    "title": "Academia Fracrimar: Edad Dorada",
+    "date": "2026-03-13",
+    "time": "09:00",
+    "location": "Sala de Reuniones A",
+    "category": "academia",
+    "description": "Clases de enseñanza bíblica adaptadas para adultos mayores. Un tiempo de crecimiento espiritual y comunión."
   }
 ]

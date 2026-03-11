@@ -58,6 +58,32 @@
   --font-display: 'Gotham', sans-serif;
   --font-body: 'Gotham', sans-serif;
 
+  /* Typography Scale (Base 18px) */
+  --fs-3xs: 0.5rem;
+  /* 9px */
+  --fs-2xs: 0.611rem;
+  /* 11px */
+  --fs-xs: 0.722rem;
+  /* 13px */
+  --fs-sm: 0.833rem;
+  /* 15px */
+  --fs-base: 1rem;
+  /* 18px */
+  --fs-md: 1.111rem;
+  /* 20px */
+  --fs-lg: 1.278rem;
+  /* 23px */
+  --fs-xl: 1.5rem;
+  /* 27px */
+  --fs-2xl: 2.111rem;
+  /* 38px */
+  --fs-3xl: 3.333rem;
+  /* 60px */
+  --fs-4xl: 4.444rem;
+  /* 80px */
+  --fs-5xl: 6.667rem;
+  /* 120px */
+
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 16px;
@@ -84,7 +110,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -142,20 +168,20 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(var(--fs-2xl), 6vw, var(--fs-4xl));
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(var(--fs-xl), 4vw, var(--fs-3xl));
 }
 
 h3 {
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-size: clamp(var(--fs-lg), 2.5vw, var(--fs-xl));
 }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: .7rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -169,7 +195,7 @@ h3 {
   width: 100%;
   max-width: var(--max-w);
   margin-inline: auto;
-  padding-inline: clamp(20px, 5vw, 48px);
+  padding-inline: clamp(20px, 5vw, 8px);
 }
 
 .section {
@@ -203,7 +229,7 @@ h3 {
 
 .ornament-symbol {
   color: var(--gold);
-  font-size: 1.2rem;
+  font-size: var(--fs-lg);
   line-height: 1;
 }
 
@@ -218,7 +244,7 @@ h3 {
 .section-header p {
   margin-top: 1rem;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: var(--fs-md);
 }
 
 .section--dark .section-header p {
@@ -270,12 +296,6 @@ h3 {
   transform: scale(1.05);
 }
 
-/* Obsolete CSS Logo styles (kept for reference or cleanup) 
-.logo-mark { ... }
-.logo-text { ... }
-.logo-subtitle { ... }
-*/
-
 /* Nav links */
 .nav-links {
   display: flex;
@@ -286,7 +306,7 @@ h3 {
 }
 
 .nav-links a {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   letter-spacing: .06em;
   color: rgba(245, 241, 235, .75);
@@ -295,6 +315,7 @@ h3 {
   padding-bottom: 2px;
   white-space: nowrap;
   text-transform: none;
+  margin-left: 1.25rem;
 }
 
 .nav-links a::after {
@@ -372,7 +393,7 @@ h3 {
 }
 
 .nav-mobile ul a {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -422,16 +443,32 @@ h3 {
   /* default for the solid fade overlay (controlled by JS) */
   --solidOpacity: 0;
 
+  /* keep flip + allow JS to add translate/scale without losing it */
+  transform: translate3d(0, 0, 0) scaleX(-1);
+  will-change: transform;
+}
+
+#inicio .hero-bg-media {
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(rgba(26, 31, 46, 0.7), rgba(26, 31, 46, 0.7)),
     url('images/pexels-caleboquendo-18100820.jpg');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-
-  /* keep flip + allow JS to add translate/scale without losing it */
-  transform: translate3d(0, 0, 0) scaleX(-1);
+  animation: heroZoom 40s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
 }
 
 /* Solid color overlay that fades in on scroll */
@@ -503,7 +540,7 @@ h3 {
   align-items: center;
   gap: .5rem;
   font-family: var(--font-body);
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -553,7 +590,7 @@ h3 {
 
 .btn-sm {
   padding: .6rem 1.2rem;
-  font-size: .78rem;
+  font-size: var(--fs-2xs);
 }
 
 .hero-scroll {
@@ -566,7 +603,7 @@ h3 {
   align-items: center;
   gap: .5rem;
   color: rgba(245, 241, 235, .35);
-  font-size: .68rem;
+  font-size: var(--fs-2xs);
   letter-spacing: .15em;
   text-transform: uppercase;
 }
@@ -618,7 +655,7 @@ h3 {
 
 .quienes-text p {
   color: rgba(245, 241, 235, .65);
-  font-size: 1.05rem;
+  font-size: var(--fs-md);
   line-height: 1.8;
   margin-bottom: 1rem;
 }
@@ -763,91 +800,7 @@ h3 {
 /* ═══════════════════════════════════════════════════════════
    MISIÓN / VISIÓN / VALORES
 ═══════════════════════════════════════════════════════════ */
-#maranata {
-  background: var(--ivory);
-}
-
-.mvv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.mvv-card {
-  background: var(--white);
-  border: 1px solid rgba(184, 146, 74, .15);
-  border-top: 3px solid var(--gold);
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
-.mvv-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-
-.mvv-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--gold-pale);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin-bottom: 1.25rem;
-  color: var(--gold);
-}
-
-.mvv-card h3 {
-  font-size: 1.3rem;
-  color: var(--night);
-  margin-bottom: .75rem;
-}
-
-.mvv-card p {
-  color: var(--muted);
-  font-size: .95rem;
-  line-height: 1.7;
-}
-
-.valores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.valor-item {
-  display: flex;
-  align-items: flex-start;
-  gap: .75rem;
-  padding: 1.25rem;
-  background: var(--ivory-dark);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--gold);
-}
-
-.valor-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: .5rem;
-  flex-shrink: 0;
-}
-
-.valor-item strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--night);
-  margin-bottom: .2rem;
-}
-
-.valor-item span {
-  font-size: .88rem;
-  color: var(--muted);
-}
+/* Cleaned up redundant styles. The section #maranata is now styled below in the "MINISTRY SECTION (Updated)" block. */
 
 /* ═══════════════════════════════════════════════════════════
    QUÉ HACEMOS
@@ -862,6 +815,7 @@ h3 {
   background-attachment: fixed;
   /* Subtle parallax effect */
   isolation: isolate;
+  display: none;
 }
 
 #que-hacemos .section-header h2 {
@@ -901,12 +855,12 @@ h3 {
 
 .qh-panel h3 {
   color: var(--ivory);
-  font-size: 1.4rem;
+  font-size: var(--fs-xl);
 }
 
 .qh-panel p {
   color: rgba(245, 241, 235, .55);
-  font-size: .92rem;
+  font-size: var(--fs-sm);
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -923,7 +877,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: .75rem;
-  font-size: .9rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .75);
 }
 
@@ -937,7 +891,7 @@ h3 {
 
 .materia-badge {
   margin-left: auto;
-  font-size: .65rem;
+  font-size: var(--fs-2xs);
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gold-light);
@@ -959,7 +913,7 @@ h3 {
 .actividades-desc-list li {
   display: flex;
   gap: .75rem;
-  font-size: .92rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .75);
   line-height: 1.6;
 }
@@ -994,7 +948,7 @@ h3 {
 }
 
 .filter-btn {
-  font-size: .78rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1106,14 +1060,14 @@ h3 {
 }
 
 .act-date-badge .day {
-  font-size: 1.6rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--night);
   display: block;
 }
 
 .act-date-badge .month {
-  font-size: .72rem;
+  font-size: var(--fs-xs);
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1121,7 +1075,7 @@ h3 {
 }
 
 .cat-chip {
-  font-size: .68rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -1132,14 +1086,14 @@ h3 {
 }
 
 .act-card h3 {
-  font-size: 1.15rem;
+  font-size: var(--fs-md);
   color: var(--night);
   margin-bottom: .6rem;
   line-height: 1.35;
 }
 
 .act-desc {
-  font-size: .875rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.65;
   flex: 1;
@@ -1158,7 +1112,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: .5rem;
-  font-size: .8rem;
+  font-size: var(--fs-2xs);
   color: var(--muted);
 }
 
@@ -1177,7 +1131,7 @@ h3 {
 
 .cartelera-empty p {
   margin-top: .5rem;
-  font-size: .95rem;
+  font-size: var(--fs-sm);
 }
 
 /* Loading */
@@ -1188,7 +1142,7 @@ h3 {
   gap: .75rem;
   padding: 4rem;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: var(--fs-sm);
   grid-column: 1/-1;
 }
 
@@ -1236,7 +1190,7 @@ h3 {
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
   margin-bottom: 2rem;
-  font-size: .83rem;
+  font-size: var(--fs-sm);
   color: var(--gold-light);
   line-height: 1.6;
 }
@@ -1244,7 +1198,7 @@ h3 {
 .form-notice strong {
   display: block;
   margin-bottom: .2rem;
-  font-size: .88rem;
+  font-size: var(--fs-sm);
 }
 
 /* Form */
@@ -1261,7 +1215,7 @@ h3 {
 }
 
 .form-label {
-  font-size: .8rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -1282,7 +1236,7 @@ h3 {
   border-radius: var(--radius-sm);
   color: var(--ivory);
   font-family: var(--font-body);
-  font-size: .95rem;
+  font-size: var(--fs-sm);
   padding: .8rem 1rem;
   transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
@@ -1327,7 +1281,7 @@ h3 {
 }
 
 .field-error {
-  font-size: .78rem;
+  font-size: var(--fs-2xs);
   color: #F87171;
   display: none;
 }
@@ -1353,7 +1307,7 @@ h3 {
 }
 
 .checkbox-group label {
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .55);
   line-height: 1.5;
   cursor: pointer;
@@ -1379,7 +1333,7 @@ h3 {
   background: var(--gold);
   color: var(--night);
   padding: .9rem 2rem;
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1405,7 +1359,7 @@ h3 {
   border: 1px solid rgba(184, 146, 74, .35);
   color: var(--gold-light);
   padding: .9rem 1.5rem;
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -1468,12 +1422,12 @@ h3 {
 .toast-title {
   font-weight: 600;
   color: var(--ivory);
-  font-size: .95rem;
+  font-size: var(--fs-sm);
   margin-bottom: .2rem;
 }
 
 .toast-msg {
-  font-size: .83rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .6);
   line-height: 1.5;
 }
@@ -1483,7 +1437,7 @@ h3 {
   top: .75rem;
   right: .75rem;
   color: rgba(245, 241, 235, .4);
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   line-height: 1;
   padding: .2rem;
   transition: color var(--transition);
@@ -1509,13 +1463,13 @@ h3 {
 
 .aside-card h4 {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   color: var(--ivory);
   margin-bottom: 1rem;
 }
 
 .aside-card p {
-  font-size: .88rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .55);
   line-height: 1.6;
 }
@@ -1533,26 +1487,28 @@ h3 {
   background: var(--night-soft);
   border-radius: var(--radius-sm);
   padding: .6rem .8rem;
-  font-size: .78rem;
+  font-size: var(--fs-2xs);
 }
 
 .sub-item .sub-type {
   color: var(--gold-light);
   font-weight: 600;
   margin-bottom: .1rem;
+  font-size: var(--fs-sm);
 }
 
 .sub-item .sub-name {
   color: rgba(245, 241, 235, .7);
+  font-size: var(--fs-sm);
 }
 
 .sub-item .sub-time {
   color: rgba(245, 241, 235, .35);
-  font-size: .72rem;
+  font-size: var(--fs-xs);
 }
 
 .submissions-empty {
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   color: rgba(245, 241, 235, .35);
   text-align: center;
   padding: 1rem;
@@ -1570,7 +1526,7 @@ h3 {
   color: var(--gold-light);
   padding: .65rem 1rem;
   border-radius: var(--radius-sm);
-  font-size: .8rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -1631,13 +1587,13 @@ footer {
 }
 
 .footer-copy {
-  font-size: .78rem;
+  font-size: var(--fs-2xs);
   color: rgba(245, 241, 235, .3);
   letter-spacing: .04em;
 }
 
 .footer-v1 {
-  font-size: .72rem;
+  font-size: var(--fs-xs);
   color: rgba(184, 146, 74, .5);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1655,7 +1611,7 @@ footer {
   padding: .6rem 1.2rem;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   font-weight: 600;
-  font-size: .85rem;
+  font-size: var(--fs-sm);
   z-index: 9999;
   transition: top .2s;
 }
@@ -1715,6 +1671,7 @@ footer {
   background-position: center;
   background-attachment: fixed;
   isolation: isolate;
+  display: none;
 }
 
 #equipo .section-header h2 {
@@ -1772,7 +1729,7 @@ footer {
   color: var(--gold-light);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: var(--fs-2xs);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 0.5rem;
@@ -1781,13 +1738,13 @@ footer {
 .team-name {
   color: var(--ivory);
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: var(--fs-xl);
   margin-bottom: 1rem;
 }
 
 .team-bio {
   color: var(--muted-light);
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   line-height: 1.6;
 }
 
@@ -1797,4 +1754,705 @@ footer {
     max-width: 450px;
     margin-inline: auto;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MINISTRY SECTION (Updated)
+   Look/Behave Adaptation
+═══════════════════════════════════════════════════════════ */
+
+#maranata {
+  --m-cream: var(--night);
+  --m-white: var(--night-mid);
+  --m-gold: #c9a84c;
+  --m-gold-light: #e8d5a3;
+  --m-gold-pale: rgba(184, 146, 74, 0.15);
+  --m-text-dark: var(--ivory);
+  --m-text-mid: rgba(245, 241, 235, .8);
+  --m-text-soft: rgba(245, 241, 235, .55);
+  --m-border: rgba(184, 146, 74, 0.15);
+
+  background-color: var(--m-cream);
+  color: var(--m-text-mid);
+}
+
+#maranata .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* ── CHURCH GLOBAL IDENTITY (Modular Aside Cards) ── */
+.church-identity-grid {
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.values-art-card {
+  grid-column: span 2;
+  padding: 3rem !important;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  container-type: inline-size;
+  overflow: hidden; /* Prevent any text overflow outside card */
+}
+
+/* Values Art (Image Replication) */
+.values-art {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "obediente somos productiva"
+    "obediente row-fiel productiva"
+    "obediente generosa productiva"
+    "obediente ordenada productiva"
+    "obediente row-unida productiva";
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 0 1rem;
+  color: var(--ivory);
+  font-family: 'Outfit', sans-serif;
+  line-height: 0.85;
+  padding: 1rem 0;
+}
+
+.values-art span {
+  display: block;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+}
+
+/* Vertical words */
+.v-obediente {
+  grid-area: obediente;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: clamp(2.5rem, 6.5cqi, 5.5rem);
+  font-weight: 900;
+  color: #009ce8;
+  letter-spacing: -0.02em;
+  justify-self: start;
+}
+
+.v-productiva {
+  grid-area: productiva;
+  writing-mode: vertical-rl;
+  font-size: clamp(2rem, 5.5cqi, 4.8rem);
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(245, 241, 235, 0.4);
+  letter-spacing: 0.15em;
+  justify-self: end;
+}
+
+/* Horizontal words */
+.v-somos {
+  grid-column: 2;
+  font-size: clamp(1.2rem, 3.5cqi, 3.2rem);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ivory);
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+  white-space: nowrap;
+  justify-self: start;
+  margin-left: 0;
+}
+
+.v-row-fiel {
+  grid-column: 2;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-block: -0.5rem;
+  padding-left: 0;
+}
+
+.v-row-unida {
+  grid-column: 2;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-block: 0;
+  padding-left: 2%;
+}
+
+.v-fiel {
+  font-size: clamp(3rem, 7.5cqi, 7rem);
+  font-weight: 900;
+  color: #009ce8;
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+  text-transform: none !important; /* Mixed case #Fiel as in reference */
+}
+
+.v-espiritual {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: clamp(2.8rem, 6.5cqi, 6rem);
+  text-transform: none !important;
+  color: var(--ivory);
+  margin-left: -6%;
+  transform: rotate(-4deg);
+  z-index: 2;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.v-generosa {
+  grid-column: 2;
+  font-size: clamp(4rem, 12cqi, 11rem);
+  font-weight: 900;
+  letter-spacing: -0.02em; /* Very tight kerning as in reference */
+  margin-block: -0.5rem;
+  justify-self: center;
+}
+
+.v-ordenada {
+  grid-column: 2;
+  font-size: clamp(2.5rem, 6cqi, 5.5rem);
+  font-weight: 800;
+  color: #009ce8;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  justify-self: flex-end;
+  margin-right: 0;
+}
+
+.v-unida {
+  font-size: clamp(3.5rem, 8cqi, 7.5rem);
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+}
+
+.v-educada {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: clamp(2.8rem, 6.5cqi, 6rem);
+  text-transform: none !important;
+  color: #009ce8;
+  margin-left: -5%;
+  transform: rotate(-3deg);
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+/* ──────────────────────────────────────────────── */
+/* Responsive: Church Identity Section              */
+/* ──────────────────────────────────────────────── */
+
+/* Tablet (≤ 768px): Stack Misión/Visión vertically */
+@media (max-width: 768px) {
+  .church-identity-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .values-art-card {
+    grid-column: span 1;
+    padding: 2rem !important;
+    min-height: 360px;
+  }
+
+  .values-art {
+    gap: 0 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .v-row-fiel,
+  .v-row-unida {
+    margin-block: -0.3rem;
+  }
+
+  .v-espiritual,
+  .v-educada {
+    margin-top: 0.3rem;
+  }
+}
+
+/* Mobile (≤ 480px): Further compacting */
+@media (max-width: 480px) {
+  .church-identity-grid {
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .values-art-card {
+    padding: 1.5rem !important;
+    min-height: 280px;
+  }
+
+  .values-art {
+    gap: 0 0.25rem;
+    padding: 0.25rem 0;
+    line-height: 0.8;
+  }
+
+  /* Scale down vertical words on small screens */
+  .v-obediente {
+    font-size: clamp(1.5rem, 5cqi, 3rem);
+  }
+
+  .v-productiva {
+    font-size: clamp(1.2rem, 4cqi, 2.5rem);
+    letter-spacing: 0.1em;
+  }
+
+  .v-somos {
+    font-size: clamp(0.7rem, 2.5cqi, 1.5rem);
+    -webkit-text-stroke: 1px var(--ivory);
+  }
+
+  .v-fiel {
+    font-size: clamp(1.5rem, 6cqi, 3.5rem);
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .v-espiritual {
+    font-size: clamp(1.5rem, 5cqi, 3rem);
+    margin-left: -4%;
+    margin-top: 0.2rem;
+  }
+
+  .v-generosa {
+    font-size: clamp(2.5rem, 10cqi, 6rem);
+  }
+
+  .v-ordenada {
+    font-size: clamp(1.5rem, 5cqi, 3rem);
+  }
+
+  .v-unida {
+    font-size: clamp(2rem, 6cqi, 4rem);
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .v-educada {
+    font-size: clamp(1.5rem, 5cqi, 3rem);
+    margin-left: -3%;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Divider to Ministries */
+.ministry-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0.4;
+}
+
+.ministry-section-divider::before,
+.ministry-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--m-gold), transparent);
+}
+
+.ministry-section-divider span {
+  font-size: var(--fs-3xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--m-gold);
+  white-space: nowrap;
+}
+
+/* ── MINISTRY TABS ── */
+.ministry-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0 24px 48px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ministry-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: var(--m-border);
+}
+
+.tab-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--m-text-soft);
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--m-gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--ivory);
+}
+
+.tab-btn.active {
+  color: var(--m-gold);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+/* ── MINISTRY CONTENT ── */
+.ministry-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  /*padding: 0 24px 100px;*/
+  padding-inline: clamp(0px, 5vw, 0px);
+}
+
+.ministry-panel {
+  display: none;
+  animation: fadeUp 0.45s ease forwards;
+}
+
+.ministry-panel.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── PANEL LAYOUT ── */
+.panel-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.panel-hero {
+  background: var(--m-white);
+  border: 1px solid var(--m-border);
+  border-radius: var(--radius) 0 0 0;
+  padding: 52px 52px 48px;
+  position: relative;
+  overflow: hidden;
+  grid-row: span 1;
+}
+
+.panel-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, var(--m-gold-pale) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ministry-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--fs-5xl);
+  font-weight: 300;
+  color: var(--m-gold-pale);
+  line-height: 1;
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  user-select: none;
+  letter-spacing: -0.04em;
+  display: none;
+}
+
+.ministry-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--m-gold-pale);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.ministry-icon-wrap svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--m-gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ministry-name {
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  color: var(--m-text-dark);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.ministry-tag {
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--m-gold);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CARDS ── */
+.cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cards-col .mvp-card {
+  background: var(--m-white);
+  padding: 36px 40px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  border: 1px solid var(--m-border);
+  border-left: none;
+  border-radius: 0;
+}
+
+.panel-top>.cards-col .mvp-card:first-child {
+  border-radius: 0 var(--radius) 0 0;
+}
+
+.panel-top>.cards-col .mvp-card:last-child {
+  border-top: none;
+  border-radius: 0;
+}
+
+.cards-col .mvp-card:hover {
+  background: var(--night-mid);
+  transform: none;
+  box-shadow: none;
+}
+
+/*
+.card-label {
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--m-gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+*/
+
+.card-label::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 0px;
+  background: var(--m-gold);
+}
+
+.card-text {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--m-text-mid);
+  line-height: 1.75;
+}
+
+/* ── BOTTOM FULL-WIDTH CARD ── */
+.panel-bottom {
+  background: var(--m-white);
+  border: 1px solid var(--m-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 40px 52px;
+  display: flex;
+  align-items: center;
+  gap: 52px;
+}
+
+/*
+.panel-bottom .card-label {
+  color: var(--m-gold-light);
+}
+*/
+
+.panel-bottom .card-label::before {
+  background: var(--m-gold-light);
+}
+
+.bottom-label-col {
+  flex-shrink: 0;
+}
+
+.panel-bottom .card-text {
+  color: rgba(253, 250, 246, 0.72);
+  font-size: var(--fs-sm);
+  border-left: 1px solid rgba(201, 168, 76, 0.35);
+  padding-left: 40px;
+  flex: 1;
+}
+
+/* ── VALUES STRIP ── */
+.values-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+  display: none;
+
+}
+
+.value-pill {
+  font-family: 'Jost', sans-serif;
+  font-size: var(--fs-3xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--m-text-mid);
+  background: var(--m-white);
+  border: 1px solid var(--m-border);
+  border-radius: 100px;
+  padding: 8px 18px;
+  transition: all 0.25s;
+}
+
+.value-pill:hover {
+  background: rgba(184, 146, 74, 0.25);
+  border-color: var(--m-gold-light);
+  color: var(--ivory);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .panel-top {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-hero {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .panel-hero::before {
+    display: none;
+  }
+
+  .panel-top>.cards-col .mvp-card {
+    border-left: 1px solid var(--m-border);
+    border-top: none;
+  }
+
+  .panel-top>.cards-col .mvp-card:first-child {
+    border-radius: 0;
+  }
+
+  .panel-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .panel-bottom .card-text {
+    border-left: none;
+    border-top: 1px solid rgba(201, 168, 76, 0.3);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+
+  .ministry-number {
+    font-size: var(--fs-4xl);
+  }
+
+  .panel-hero {
+    padding: 40px 32px 36px;
+  }
+
+  .mvp-card {
+    padding: 28px 32px;
+  }
+}
+
+/* ─── Hero Slider Animation ─── */
+.hero-slider {
+  display: inline-flex;
+  vertical-align: top;
+  height: 1.25em;
+  /* Match line-height */
+  position: relative;
+  transition: width 0.5s ease;
+}
+
+.hero-slide {
+  height: 1.25em;
+  display: flex;
+  align-items: center;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease;
+  opacity: 0;
+  transform: translateX(30px);
+  font-style: italic;
+  /* Match <em> default */
+  color: var(--gold-light);
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  /* Let the active slide define the container width */
+}
+
+.hero-slide.exit {
+  opacity: 0;
+  transform: translateX(-30px);
+  position: absolute;
 }

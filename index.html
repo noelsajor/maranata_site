@@ -8,7 +8,11 @@
     content="Maranata — Comunidad de fe, formación y servicio. Academia, actividades mensuales y espacio de oración." />
   <title>Maranata — Comunidad de Fe y Formación</title>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Mrs+Saint+Delafield&family=Outfit:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/Isotipo - blanco.png" />
 </head>
 
 <body>
@@ -29,11 +33,11 @@
         <!-- Desktop links -->
         <ul class="nav-links" role="list">
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#maranata">Maranata</a></li>
-          <li><a href="#que-hacemos">Qué hacemos</a></li>
+          <li><a href="#quienes">Quienes somos</a></li>
+          <li><a href="#maranata">Nuestra Misión</a></li>
           <li><a href="#actividades">Actividades</a></li>
-          <li><a href="#equipo">Nuestro Equipo</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <!--<li><a href="#equipo">Nuestro Equipo</a></li>-->
+          <!--<li><a href="#blog">Blog</a></li>-->
           <li><a href="#contacto">Contáctanos</a></li>
         </ul>
 
@@ -51,11 +55,11 @@
     <div id="nav-mobile" class="nav-mobile" aria-hidden="true">
       <ul role="list">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#maranata">Maranata</a></li>
-        <li><a href="#que-hacemos">Qué hacemos</a></li>
+        <li><a href="#quienes">Quienes somos</a></li>
+        <li><a href="#maranata">Nuestra Misión</a></li>
         <li><a href="#actividades">Actividades</a></li>
-        <li><a href="#equipo">Nuestro Equipo</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <!--<li><a href="#equipo">Nuestro Equipo</a></li>-->
+        <!--<li><a href="#blog">Blog</a></li>-->
         <li><a href="#contacto">Contáctanos</a></li>
       </ul>
     </div>
@@ -66,14 +70,20 @@
 
     <!-- ───────── HERO ───────── -->
     <section id="inicio" aria-label="Portada">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg-media"></div>
+      </div>
       <div class="hero-bg-lines" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-content">
           <div class="hero-eyebrow" aria-hidden="true">Comunidad · Fe · Formación</div>
           <h1 class="hero-title">
             Un lugar donde<br>
-            <em>la fe</em> toma forma.
+            <span class="hero-slider" aria-label="la fe, el servicio, el crecimiento">
+              <em class="hero-slide active">la fe</em>
+              <em class="hero-slide">el servicio</em>
+              <em class="hero-slide">el crecimiento</em>
+            </span> toma forma.
           </h1>
           <p class="hero-desc">
             Maranata es una comunidad de fe comprometida con la formación integral,
@@ -115,7 +125,6 @@
           <div class="quienes-text reveal">
             <span class="eyebrow">Quiénes somos</span>
             <h2 id="quienes-title">Una comunidad<br>construida sobre la fe.</h2>
-            <div class="ornament"><span class="ornament-symbol">✦</span></div>
             <p>
               Maranata nació del deseo de crear un espacio donde la fe cristiana se viva de manera auténtica,
               profunda y transformadora. Somos una comunidad que valora tanto la formación bíblica rigurosa
@@ -164,115 +173,336 @@
     </section>
 
     <!-- ───────── MISIÓN / VISIÓN / VALORES ───────── -->
-    <section id="maranata" class="section" aria-labelledby="mvv-title">
+    <section id="maranata" class="section" aria-labelledby="maranata-title">
       <div class="container">
         <div class="section-header reveal">
-          <span class="eyebrow">Identidad institucional</span>
-          <h2 id="mvv-title">Misión, Visión y Valores</h2>
-          <p>Los pilares que guían cada decisión, cada clase y cada actividad de nuestra comunidad.</p>
+          <span class="eyebrow">Nuestra Misión</span>
+          <h2 id="maranata-title" class="section-title">Fraternidad Cristiana<br>Maranata</h2>
+          <p>Nuestra identidad está cimentada en la formación integral de la persona y la familia, siguiendo el mandato
+            de las Sagradas Escrituras.</p>
         </div>
 
-        <!-- Misión & Visión -->
-        <div class="mvv-grid">
-          <article class="mvv-card reveal" aria-labelledby="mision-title">
-            <div class="mvv-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-              </svg>
-            </div>
-            <h3 id="mision-title">Misión</h3>
-            <p>
-              <!-- POR DEFINIR: Reemplazar con la misión oficial de Maranata -->
-              <em style="color:var(--gold);"></em>Proclamar el evangelio de Jesucristo,
-              formar discípulos íntegros y servir a la comunidad con excelencia, amor y verdad,
-              impactando cada esfera de la sociedad desde los valores del Reino.
-            </p>
-          </article>
-
-          <article class="mvv-card reveal" aria-labelledby="vision-title">
-            <div class="mvv-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-            </div>
-            <h3 id="vision-title">Visión</h3>
-            <p>
-              <!-- POR DEFINIR: Reemplazar con la visión oficial de Maranata -->
-              <em style="color:var(--gold);"></em>Ser una comunidad de referencia en formación
-              cristiana integral, reconocida por la calidad de sus discípulos, la profundidad de su
-              adoración y la eficacia de su servicio transformador.
-            </p>
-          </article>
-
-          <article class="mvv-card reveal" aria-labelledby="proposito-title">
-            <div class="mvv-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <h3 id="proposito-title">Propósito</h3>
-            <p>
-              <!-- POR DEFINIR: Reemplazar con el propósito oficial de Maranata -->
-              <em style="color:var(--gold);"></em>Glorificar a Dios en todo lo que hacemos,
-              edificar a las personas en su fe y equipar a cada creyente para vivir plenamente su
-              llamado en el mundo.
-            </p>
-          </article>
-        </div>
-
-        <!-- Valores -->
-        <div class="mt-2 reveal">
-          <div class="section-header text-center" style="margin-bottom:2rem;">
-            <span class="eyebrow">Nuestros valores</span>
+        <!-- ── CHURCH GLOBAL MVV ────────── -->
+        <div class="church-identity-grid reveal">
+          <div class="aside-card">
+            <h4>Misión</h4>
+            <p class="card-text">Somos una iglesia que alcanza personas que no han conocido a Cristo como su Salvador,
+              formándoles de manera integral, basándonos en las Sagradas Escrituras.</p>
           </div>
-          <div class="valores-grid">
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Fe genuina</strong>
-                <span></span>
+
+          <div class="aside-card">
+            <h4>Visión</h4>
+            <p class="card-text">Somos una iglesia de alcance mundial, que atiende a la familia de una manera integral,
+              basados en las Sagradas Escrituras.</p>
+          </div>
+
+          <div class="aside-card values-art-card">
+            <h4>Nuestros Valores</h4>
+            <div class="values-art">
+              <span class="v-somos">Somos una familia</span>
+              <span class="v-obediente">Obediente</span>
+              <div class="v-row-fiel">
+                <span class="v-fiel">#Fiel</span>
+                <span class="v-espiritual">Espiritual</span>
               </div>
-            </div>
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Excelencia</strong>
-                <span></span>
+              <span class="v-generosa">Generosa</span>
+              <span class="v-ordenada">#Ordenada</span>
+              <div class="v-row-unida">
+                <span class="v-unida">Unida</span>
+                <span class="v-educada">Educada</span>
               </div>
-            </div>
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Comunidad</strong>
-                <span></span>
-              </div>
-            </div>
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Servicio</strong>
-                <span></span>
-              </div>
-            </div>
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Integridad</strong>
-                <span></span>
-              </div>
-            </div>
-            <div class="valor-item">
-              <div class="valor-dot" aria-hidden="true"></div>
-              <div>
-                <strong>Verdad</strong>
-                <span></span>
-              </div>
+              <span class="v-productiva">Productiva</span>
             </div>
           </div>
         </div>
+
+        <div class="ministry-section-divider">
+          <span>Estructura Ministerial</span>
+        </div>
+
+        <nav class="ministry-nav reveal">
+          <button class="tab-btn active" data-index="0">Adoración</button>
+          <button class="tab-btn" data-index="1">Discipulado</button>
+          <button class="tab-btn" data-index="2">Jóvenes</button>
+          <button class="tab-btn" data-index="3">Familia</button>
+          <button class="tab-btn" data-index="4">Misiones</button>
+          <button class="tab-btn" data-index="5">Servicio</button>
+        </nav>
+
+        <div class="ministry-content reveal">
+
+          <!-- 1. ADORACIÓN -->
+          <div class="ministry-panel active" id="panel-0">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">01</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 18V5l12-2v13" />
+                    <circle cx="6" cy="18" r="3" />
+                    <circle cx="18" cy="16" r="3" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio<br>de Adoración</h3>
+                <span class="ministry-tag">Música · Liturgia · Alabanza</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Guiar a la congregación a un encuentro genuino con Dios a través de la música, el
+                    canto y la expresión artística que eleva el espíritu y glorifica al Creador.</p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Ser un equipo de adoradores comprometidos con la excelencia espiritual y musical,
+                    que inspire a toda la iglesia a vivir en una cultura de adoración continua y profunda.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Crear espacios sagrados donde la presencia de Dios sea tangible, formando adoradores
+                en espíritu y en verdad que lleven la adoración más allá de los muros del templo.</p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Excelencia</span>
+              <span class="value-pill">Autenticidad</span>
+              <span class="value-pill">Unidad</span>
+              <span class="value-pill">Reverencia</span>
+              <span class="value-pill">Creatividad</span>
+            </div>
+          </div>
+
+          <!-- 2. DISCIPULADO -->
+          <div class="ministry-panel" id="panel-1">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">02</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio de<br>Discipulado</h3>
+                <span class="ministry-tag">Formación · Enseñanza · Crecimiento</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Formar discípulos integrales de Jesucristo a través de la enseñanza bíblica
+                    sistemática, grupos pequeños y relaciones de mentoría que producen transformación real y duradera.
+                  </p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Construir una iglesia donde cada creyente sea también un hacedor de discípulos,
+                    multiplicando el impacto del evangelio en cada hogar, trabajo y esfera de influencia de nuestra
+                    ciudad.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Acompañar a cada persona en su caminar de fe desde el primer paso hasta la madurez
+                espiritual, equipándola con la Palabra, la oración y la comunidad para vivir plenamente su llamado.</p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Formación</span>
+              <span class="value-pill">Mentoría</span>
+              <span class="value-pill">Palabra</span>
+              <span class="value-pill">Multiplicación</span>
+              <span class="value-pill">Compromiso</span>
+            </div>
+          </div>
+
+          <!-- 3. JÓVENES -->
+          <div class="ministry-panel" id="panel-2">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">03</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio<br>de Jóvenes</h3>
+                <span class="ministry-tag">Juventud · Identidad · Propósito</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Conectar a la juventud con Dios y entre sí, cultivando una fe auténtica que
+                    responda a los desafíos de la cultura contemporánea con la verdad transformadora del evangelio.</p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Una generación de jóvenes seguros de su identidad en Cristo, apasionados por
+                    servir, equipados para liderar y comprometidos a dejar una huella eterna en su generación.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Ser un espacio seguro donde los jóvenes descubran su identidad en Cristo, desarrollen
+                sus dones y se conviertan en agentes de cambio en sus escuelas, universidades y comunidades.</p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Identidad</span>
+              <span class="value-pill">Autenticidad</span>
+              <span class="value-pill">Liderazgo</span>
+              <span class="value-pill">Comunidad</span>
+              <span class="value-pill">Impacto</span>
+            </div>
+          </div>
+
+          <!-- 4. FAMILIA -->
+          <div class="ministry-panel" id="panel-3">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">04</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio<br>de Familia</h3>
+                <span class="ministry-tag">Matrimonio · Hogar · Restauración</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Fortalecer el matrimonio y el hogar como fundamento de la sociedad, brindando
+                    herramientas prácticas y apoyo espiritual para construir familias saludables que reflejen el amor de
+                    Dios.</p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Una comunidad donde cada familia encuentre restauración, crecimiento y propósito;
+                    donde los hogares sean centros de gracia, formación de fe y testimonio vivo del reino de Dios.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Acompañar a matrimonios, padres e hijos en cada etapa de la vida familiar, ofreciendo
+                consejería, escuelas de matrimonio y espacios de encuentro que sanan y fortalecen el vínculo del hogar.
+              </p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Restauración</span>
+              <span class="value-pill">Amor</span>
+              <span class="value-pill">Compromiso</span>
+              <span class="value-pill">Gracia</span>
+              <span class="value-pill">Legado</span>
+            </div>
+          </div>
+
+          <!-- 5. MISIONES -->
+          <div class="ministry-panel" id="panel-4">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">05</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio<br>de Misiones</h3>
+                <span class="ministry-tag">Evangelismo · Alcance · Naciones</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Llevar el evangelio de Jesucristo más allá de los muros de la iglesia,
+                    movilizando a la congregación en acciones concretas de alcance local, nacional e internacional con
+                    el amor de Dios.</p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Una iglesia con corazón misionero que plante iglesias, envíe misioneros y sea
+                    agente de transformación social en los lugares más vulnerables, hasta los confines de la tierra.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Cumplir la Gran Comisión movilizando recursos humanos y materiales para alcanzar
+                pueblos sin alcanzar, bendecir comunidades en necesidad y establecer el reino de Dios en cada rincón del
+                mundo.</p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Evangelismo</span>
+              <span class="value-pill">Compasión</span>
+              <span class="value-pill">Sacrificio</span>
+              <span class="value-pill">Fe</span>
+              <span class="value-pill">Transformación</span>
+            </div>
+          </div>
+
+          <!-- 6. SERVICIO -->
+          <div class="ministry-panel" id="panel-5">
+            <div class="panel-top">
+              <div class="panel-hero">
+                <span class="ministry-number">06</span>
+                <div class="ministry-icon-wrap">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                </div>
+                <h3 class="ministry-name">Ministerio<br>de Servicio</h3>
+                <span class="ministry-tag">Voluntariado · Diaconado · Comunidad</span>
+              </div>
+              <div class="cards-col">
+                <div class="mvp-card">
+                  <div class="card-label">Misión</div>
+                  <p class="card-text">Cultivar una cultura de servicio desinteresado dentro y fuera de la iglesia,
+                    movilizando voluntarios que expresen el amor de Cristo a través de acciones concretas que
+                    transforman vidas.</p>
+                </div>
+                <div class="mvp-card">
+                  <div class="card-label">Visión</div>
+                  <p class="card-text">Ser reconocidos en nuestra ciudad como una comunidad que sirve con excelencia y
+                    amor, donde cada miembro descubra su don y lo use para bendecir a otros con gozo y generosidad.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-bottom">
+              <div class="bottom-label-col">
+                <div class="card-label">Propósito</div>
+              </div>
+              <p class="card-text">Expresar el carácter de Cristo a través del servicio práctico, atendiendo las
+                necesidades físicas, emocionales y espirituales de nuestra congregación y comunidad como acto de
+                adoración viviente.</p>
+            </div>
+            <div class="values-strip">
+              <span class="value-pill">Humildad</span>
+              <span class="value-pill">Generosidad</span>
+              <span class="value-pill">Excelencia</span>
+              <span class="value-pill">Gozo</span>
+              <span class="value-pill">Comunidad</span>
+            </div>
+          </div>
+
+        </div><!-- /ministry-content -->
       </div>
     </section>
 
@@ -292,52 +522,38 @@
             <div class="qh-panel-header">
               <div class="qh-panel-icon" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-                  <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
               </div>
               <div>
-                <h3 id="academia-title">Academia Maranata</h3>
+                <h3 id="academia-title">Academia Fracrimar</h3>
               </div>
             </div>
             <p>
-              Formación bíblica y teológica estructurada para toda la congregación. Clases presenciales
-              con material propio, docentes comprometidos y un currículo en permanente desarrollo.
+              Educación cristiana integral con enfoque ministerial.
+              Contamos con tres niveles de formación y programas especializados:
             </p>
 
-            <ul class="materias-list" aria-label="Materias de la Academia">
+            <ul class="materias-list" aria-label="Niveles y Programas">
               <li>
                 <div class="materia-dot" aria-hidden="true"></div>
-                <span>Formación Bíblica</span>
+                <span><strong>Teología</strong></span>
+                <ul
+                  style="list-style: none; padding-left: 1.5rem; margin-top: 0.4rem; opacity: 0.85; font-size: 0.95em; display: flex; flex-direction: column; gap: 0.4rem;">
+                  <li>• Nivel Básico (Libertad, Doctrina, Liderazgo)</li>
+                  <li>• Nivel Intermedio (Panorama Bíblico, Pentateuco)</li>
+                  <li>• Nivel Avanzado (Teología, Homilética)</li>
+                </ul>
+              </li>
+              <li style="margin-top: 1rem">
+                <div class="materia-dot" aria-hidden="true"></div>
+                <span><strong>Academia Kids</strong> (De 11 a 15 años)</span>
+                <span class="materia-badge">INSCRIPCIONES ABIERTAS</span>
               </li>
               <li>
                 <div class="materia-dot" aria-hidden="true"></div>
-                <span>Teología Práctica</span>
-              </li>
-              <li>
-                <div class="materia-dot" aria-hidden="true"></div>
-                <span>Historia de la Iglesia</span>
-                <span class="materia-badge">POR DEFINIR</span>
-              </li>
-              <li>
-                <div class="materia-dot" aria-hidden="true"></div>
-                <span>Hermenéutica y Exégesis</span>
-                <span class="materia-badge">POR DEFINIR</span>
-              </li>
-              <li>
-                <div class="materia-dot" aria-hidden="true"></div>
-                <span>Ética Cristiana</span>
-                <span class="materia-badge">POR DEFINIR</span>
-              </li>
-              <li>
-                <div class="materia-dot" aria-hidden="true"></div>
-                <span>Liderazgo y Servicio</span>
-                <span class="materia-badge">POR DEFINIR</span>
-              </li>
-              <li>
-                <div class="materia-dot" aria-hidden="true"></div>
-                <span>Misiones y Evangelismo</span>
-                <span class="materia-badge">POR DEFINIR</span>
+                <span><strong>Edad Dorada</strong> (Enseñanza Bíblica Especializada)</span>
               </li>
             </ul>
           </div>
@@ -466,7 +682,7 @@
       </div>
     </section>
 
-    <!-- ───────── BLOG ───────── -->
+    <!-- ───────── BLOG ───────── 
     <section id="blog" class="section reveal" aria-labelledby="blog-title">
       <div class="container">
         <div class="section-header">
@@ -476,6 +692,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- ───────── CONTACTO ───────── -->
     <section id="contacto" class="section section--dark" aria-labelledby="contact-title">
@@ -606,11 +823,9 @@
             <div class="aside-card">
               <h4>📍 Encuéntranos</h4>
               <p>
-                <!-- POR DEFINIR: Dirección y horarios -->
-                <em style="color:var(--gold-light);"></em><br>
-                Dirección, ciudad, país.<br><br>
-                <em style="color:var(--gold-light);"></em><br>
-                Horarios de atención.
+                Carrera 6, con Calle 13<br>
+                La Playa Sta. Isabel<br>
+                Barquisimeto, Estado Lara.
               </p>
             </div>
 

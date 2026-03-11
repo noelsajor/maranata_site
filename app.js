@@ -102,6 +102,7 @@ const Cartelera = (() => {
 
   /* Format time */
   function formatTime(t) {
+    if (!t.includes(':')) return t;
     const [h, m] = t.split(':');
     return `${h}:${m} hs`;
   }
@@ -614,6 +615,67 @@ const QuienesCarousel = (() => {
 })();
 
 /* ══════════════════════════════════════════════════
+   7. MINISTERIOS (Tabs)
+══════════════════════════════════════════════════ */
+const Ministerios = (() => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.ministry-panel');
+
+  function showMinistry(index) {
+    panels.forEach((p, i) => {
+      p.classList.toggle('active', i === index);
+    });
+    tabs.forEach((b, i) => {
+      b.classList.toggle('active', i === index);
+    });
+  }
+
+  function init() {
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = parseInt(btn.dataset.index);
+        showMinistry(index);
+      });
+    });
+  }
+
+  return { init };
+})();
+
+/* ══════════════════════════════════════════════════
+   8. HERO SLIDER
+══════════════════════════════════════════════════ */
+const HeroSlider = (() => {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (!slides.length) return { init: () => {} };
+
+  let current = 0;
+  const DURATION = 3000;
+
+  function next() {
+    const prev = slides[current];
+    current = (current + 1) % slides.length;
+    const nextSlide = slides[current];
+
+    prev.classList.remove('active');
+    prev.classList.add('exit');
+    
+    nextSlide.classList.add('active');
+
+    // Clean up exit class after transition
+    setTimeout(() => {
+      prev.classList.remove('exit');
+    }, 800);
+  }
+
+  function init() {
+    setInterval(next, DURATION);
+  }
+
+  return { init };
+})();
+
+/* ══════════════════════════════════════════════════
    BOOT
    ══════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -623,4 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ContactForm.init();
   Reveal.init();
   QuienesCarousel.init();
+  Ministerios.init();
+  HeroSlider.init();
 });
